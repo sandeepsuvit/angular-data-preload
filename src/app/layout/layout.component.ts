@@ -7,13 +7,17 @@ import { AppConfigService } from '../services/app-config.service';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  // Dummy to represent the data
+  modes: any;
 
   constructor(
     private appConfig: AppConfigService,
   ) { }
 
   ngOnInit() {
-    console.log(this.appConfig.getAllConfig());
+    const data = this.appConfig.getAllConfig();
+    this.modes = data;
+    console.log(data);
   }
 
 }
